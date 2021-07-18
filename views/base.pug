@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="utf-8")
+      meta(content="width=device-width, initial-scale=1.0" name="viewport")
+
+      //- !-- Favicon --
+      //- link(href="img/favicon.ico" rel="icon")
+
+      //- !-- Google Font --
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      
+      //- !-- CSS Libraries --
+      link(href="/css/style.css" rel="stylesheet")
+      title Natours | #{title}
+  
+  body
+    // HEADER
+    include _header
+        
+    // CONTENT
+    block content
+      h1 This is a placeholder heading
+      
+    // FOOTER
+    include _footer
+
+    //- script(script-src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+    script(src='/js/login.js' type="module")
+    //- script(src='/js/bundle.js')
