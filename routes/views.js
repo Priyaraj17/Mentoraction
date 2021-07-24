@@ -8,6 +8,7 @@ router.get("/", viewsController.getOverview);
 router.get("/mentor/:slug", viewsController.getMentor);
 router.get("/recentChats", viewsController.getRecentChats);
 router.get("/login", viewsController.getLoginForm);
+router.get("/signup", viewsController.getSignUpForm);
 router.get("/me", authController.protect, viewsController.getAccount);
 
 // router.post(

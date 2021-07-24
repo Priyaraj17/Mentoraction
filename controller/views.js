@@ -1,5 +1,6 @@
 const Mentor = require("../model/mentor");
 const user = require("../model/users");
+const authController = require("./authController");
 
 exports.getOverview = async (req, res, next) => {
   try {
@@ -49,5 +50,10 @@ exports.getAccount = (req, res) => {
 exports.getRecentChats = (req, res) => {
   res.status(200).render("error", {
     title: "Your account",
+  });
+};
+exports.getSignUpForm = (req, res) => {
+  res.status(200).render("signUp", {
+    title: "Please Sign in first",
   });
 };

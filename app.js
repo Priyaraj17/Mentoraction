@@ -42,6 +42,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // Test Middleware:
 app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' cdnjs.cloudflare.com"
+  );
   req.requestTime = new Date().toISOString();
   console.log(req.cookies);
   next();
