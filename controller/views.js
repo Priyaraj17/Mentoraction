@@ -57,3 +57,9 @@ exports.getSignUpForm = (req, res) => {
     title: "Please Sign in first",
   });
 };
+
+exports.getPage = (req, res) => {
+  res.status(200).render("page", {
+    title: "Please Sign in first",
+  });
+};

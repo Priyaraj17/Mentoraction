@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const mentor = require("../model/mentor");
 
-const DB = "mongodb+srv://Priyaraj17:admin@cluster0.nhpht.mongodb.net/test";
+const DB = "mongodb+srv://Priyaraj17:admin@cluster0.jpl4n.mongodb.net/test";
 
 const mongo = mongoose
   .connect(DB, {
