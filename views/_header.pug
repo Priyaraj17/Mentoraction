@@ -5,20 +5,24 @@ header#header.fixed-top.d-flex.align-items-center
         a(href="index.html") Mentoraction
     nav#navbar.navbar.order-last.order-lg-0
       ul
-        li
-          a.nav-link.scrollto.active(href="/page") Home
+        if !user
+          li
+            a.nav-link.scrollto.active(href="/page") Home
         li
           a.nav-link.scrollto(href="/") Find Mentors
         li 
           a.nav-link.scrollto(href="/chats") Chats
-        nav.nav.nav--user
         if user
-          a.nav__el.nav__el--logout Log out
-          a.nav__el(href='/me')
-              img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
-              span= user.name.split(' ')[0]
-        li
-          a.nav-link.scrollto(href="/login") Login
-        li
-          a.nav-link.scrollto(href="/signup") Signup
+          li
+            a.nav-link.logout.scrollto Log out
+          li
+            a.nav-link.nav__el(href='/me')
+              img.nav__user-img(src=`/img/users/${user.photo}` alt=`${user.firstName}`)
+          li 
+            a.nav-link.scrollto= user.firstName
+        else
+          li
+            a.nav-link.scrollto(href="/login") Login
+          li
+            a.nav-link.scrollto(href="/signup") Signup
       i.bi.bi-list.mobile-nav-toggle

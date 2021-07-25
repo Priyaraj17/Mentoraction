@@ -23,7 +23,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // 1) GLOBAL MIDDLEWARES
 // Serving static files
-app.use(cors);
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
@@ -55,6 +55,10 @@ app.use((req, res, next) => {
 
 // Routes:
 app.use("/", viewRouter);
+app.get("/hi", function (req, res) {
+  console.log("hi page");
+  res.send("hi");
+});
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/mentors", mentorRouter);
 app.use("/api/v1/mentees", menteeRouter);

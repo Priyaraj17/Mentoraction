@@ -94,9 +94,7 @@ exports.protect = async (req, res, next) => {
     }
 
     if (!token) {
-      return next(
-        new AppError("You are not logged in! Please log in to get access.", 401)
-      );
+      return;
     }
 
     // 2) Verification token
@@ -105,22 +103,7 @@ exports.protect = async (req, res, next) => {
     // 3) Check if user still exists
     const currentUser = await User.findById(decoded.id);
     if (!currentUser) {
-      return next(
-        new AppError(
-          "The user belonging to this token does no longer exist.",
-          401
-        )
-      );
-    }
-
-    // 4) Check if user changed password after the token was issued
-    if (currentUser.changedPasswordAfter(decoded.iat)) {
-      return next(
-        new AppError(
-          "User recently changed password! Please log in again.",
-          401
-        )
-      );
+      return;
     }
 
     // GRANT ACCESS TO PROTECTED ROUTE
@@ -148,11 +131,6 @@ exports.isLoggedIn = async (req, res, next) => {
         return next();
       }
 
-      // 3) Check if user changed password after the token was issued
-      if (currentUser.changedPasswordAfter(decoded.iat)) {
-        return next();
-      }
-
       // THERE IS A LOGGED IN USER
       res.locals.user = currentUser;
       return next();
@@ -160,5 +138,4 @@ exports.isLoggedIn = async (req, res, next) => {
       console.log(err);
     }
   }
-  next();
 };

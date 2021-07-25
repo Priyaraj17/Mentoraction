@@ -51,8 +51,8 @@ export const logout = async () => {
 
 const loginForm = document.querySelector(".form");
 const signupForm = document.querySelector(".signupform");
-console.log(signupForm);
-const logOutBtn = document.querySelector(".nav__el--logout");
+const logOutBtn = document.querySelector(".logout");
+console.log(logOutBtn);
 
 // DELEGATION
 

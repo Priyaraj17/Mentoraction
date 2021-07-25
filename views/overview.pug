@@ -1,6 +1,11 @@
 extends base
 
 block content
+    .container.mt-5.p-5.text-center
+        h1.m-3.secondary Browse Mentors
+        form.form-group.d-flex.width#searchWrapper
+            input.form-control.me-2(type="search", placeholder="Search by Company-Name, Name, Domain", aria-label="Search")
+            a.form-group.btn.mt-5.btn-success(type="submit") Search
 
     main.main.container 
         .row 

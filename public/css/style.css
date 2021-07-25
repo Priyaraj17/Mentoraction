@@ -407,6 +407,11 @@ body {
 .lg {
   font-size: 1.6rem;
 }
+.width {
+  margin: 0 auto;
+  width: 60%;
+  height: 50px;
+}
 .section-description {
   background-color: #fcfcfc;
   margin-top: calc(0px - var(--section-rotate));
