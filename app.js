@@ -23,7 +23,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // 1) GLOBAL MIDDLEWARES
 // Serving static files
+app.use(cors);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
 
 // Set security HTTP headers
 app.use(helmet());

@@ -360,7 +360,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(56, 64, 70, 0.7);
+  /* background: rgba(56, 64, 70, 0.7); */
   position: absolute;
   bottom: 0;
   top: 0;

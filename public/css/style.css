@@ -335,19 +335,7 @@ body {
 
 .section-header {
   position: relative;
-  height: 38vw;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--section-rotate)),
-    0 100%
-  );
-  -webkit-clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--section-rotate)),
-    0 100%
-  );
+  height: 45vw;
 }
 
 .header__hero {
@@ -373,8 +361,8 @@ body {
 .heading-box {
   position: absolute;
   bottom: 13vw;
-  left: 50%;
-  top: 35%;
+  left: 15%;
+  top: 60%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -416,7 +404,9 @@ body {
   -webkit-filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
   filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
 }
-
+.lg {
+  font-size: 1.6rem;
+}
 .section-description {
   background-color: #fcfcfc;
   margin-top: calc(0px - var(--section-rotate));
@@ -426,7 +416,7 @@ body {
 }
 .section-description > * {
   padding: 0 8vw;
-  padding-top: 14vw;
+  padding-top: 8vw;
   padding-bottom: calc(1vw + var(--section-rotate));
   -webkit-box-flex: 0;
   -ms-flex: 0 0 50%;

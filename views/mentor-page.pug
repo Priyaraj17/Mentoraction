@@ -1,0 +1,61 @@
+extends base
+include _reviewCard
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet')
+
+mixin overviewBox(label, text, icon)
+  .overview-box__detail
+    svg.overview-box__icon
+      use(xlink:href=`/img/icons.svg#icon-${icon}`)
+    span.overview-box__label= label
+    span.overview-box__text= text
+
+block content
+  section.section-header.d-flex.flex-column.justify-content-center.align-items-center
+    .header__hero.container.text-center.text-md-left(data-aos="fade-up")
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`/img/tours/${mentor.imageCover}`, alt=`${mentor.name}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${mentor.name}`
+      .heading-box__group
+        .heading-box__detail
+          svg.heading-box__icon
+            use(xlink:href='/img/icons.svg#icon-clock')
+          span.heading-box__text= `${mentor.domain}`
+        .heading-box__detail
+          svg.heading-box__icon
+            use(xlink:href='/img/icons.svg#icon-map-pin')
+          span.heading-box__text= mentor.presentCompany
+  
+  section.section-description
+    .overview-box
+      div
+        .overview-box__group
+          +overviewBox('Domain', mentor.domain, 'trending-up')
+          +overviewBox('Organization', `${mentor.presentCompay} people`, 'user')
+          +overviewBox('Rating', `${mentor.ratingsAverage} / 5`, 'star')
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Summary
+            p.cta__text= `${mentor.summary}`
+      
+    .description-box
+        h2.heading-secondary.ma-bt-lg= `About ${mentor.name}`
+        p.description__text= `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+
+
+  //- section.section-reviews
+  //-   .reviews
+  //-     each review in mentor.reviews
+  //-       +reviewCard(review)
+
+  section.section-cta
+    .cta
+        .cta__img.cta__img--logo
+            img(src='/img/logo-white.png', alt='Namentors logo')
+        .cta__content
+            h2.heading-secondary What are you waiting for?
+            button.btn.btn--green.span-all-rows Book your Mentor now!
