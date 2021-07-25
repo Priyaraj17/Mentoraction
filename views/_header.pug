@@ -2,16 +2,18 @@ header#header.fixed-top.d-flex.align-items-center
   .container.d-flex.align-items-center
     .logo.me-auto
       h1
-        a(href="index.html") Mentoraction
+        a(href="/") 
+          img(src='/img/favicon.png' alt='Mentoraction logo') 
+          |      Mentoraction
     nav#navbar.navbar.order-last.order-lg-0
       ul
         if !user
           li
-            a.nav-link.scrollto.active(href="/page") Home
+            a.nav-link.scrollto(href="/") Home
         li
-          a.nav-link.scrollto(href="/") Find Mentors
+          a.nav-link.scrollto(href="/mentors") Find Mentors
         li 
-          a.nav-link.scrollto(href="/chats") Chats
+          a.nav-link.scrollto(href="/recentChats") Chats
         if user
           li
             a.nav-link.logout.scrollto Log out

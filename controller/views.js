@@ -47,19 +47,26 @@ exports.getAccount = (req, res) => {
   });
 };
 
-exports.getRecentChats = (req, res) => {
-  res.status(200).render("error", {
-    title: "Your account",
-  });
+exports.getRecentChats = async (req, res) => {
+  try {
+    const mentors = await Mentor.find();
+
+    res.status(200).render("chats", {
+      title: "Chat with Mentors",
+      mentors,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 exports.getSignUpForm = (req, res) => {
   res.status(200).render("signUp", {
-    title: "Please Sign in first",
+    title: "Create your Account",
   });
 };
 
 exports.getPage = (req, res) => {
   res.status(200).render("page", {
-    title: "Please Sign in first",
+    title: "Home",
   });
 };

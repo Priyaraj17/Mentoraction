@@ -136,6 +136,8 @@ exports.isLoggedIn = async (req, res, next) => {
       return next();
     } catch (err) {
       console.log(err);
+      return next();
     }
   }
+  return next();
 };

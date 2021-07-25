@@ -38,8 +38,8 @@ block content
           +overviewBox('Organization', mentor.presentCompany, 'user')
           +overviewBox('Rating', `${mentor.ratingsAverage} / 5`, 'star')
         .overview-box__group
-          h2.heading-secondary.ma-bt-lg Summary
-          p.description__text.lg= `${mentor.summary}`
+          h2.heading-secondary.ma-bt-lg Projects
+          p.description__text.lg= `${mentor.projects}`
         .overview-box__group 
           h2.heading-secondary.ma-bt-sm Skills 
           p.description__text.lg='Communication skills Strategic thinking Technical manager Machine learning Statistics Data science Behavioral interviews Interviewing Career development Technical interviews Career Leadership Resume Management'
@@ -118,8 +118,7 @@ block content
           .swiper-pagination
       //  End Testimonials Section 
 
-  section.section-cta
-    .cta
-        .cta__content
-            h2.heading-secondary What are you waiting for?
-            button.btn.btn--green.span-all-rows Book your Mentor now!
+  .cta.mt-5.mb-5
+      .cta__content
+          h2.heading-secondary What are you waiting for?
+          a.btn.btn--green.span-all-rows(href="/book") Book your Mentor now!
