@@ -18,5 +18,6 @@ router.get(
 );
 router.get("/login", viewsController.getLoginForm);
 router.get("/signup", viewsController.getSignUpForm);
-router.get("/me", authController.protect, viewsController.getAccount);
+router.get("/book", viewsController.getErrorPage);
+router.get("/blogs", viewsController.getErrorPage);
 module.exports = router;

@@ -70,3 +70,9 @@ exports.getPage = (req, res) => {
     title: "Home",
   });
 };
+
+exports.getErrorPage = (req, res) => {
+  res.status(200).render("error", {
+    title: "Home",
+  });
+};

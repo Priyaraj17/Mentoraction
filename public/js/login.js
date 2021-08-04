@@ -27,7 +27,7 @@ export const login = async (email, password) => {
       showAlert("success", "Logged in successfully!");
       console.log("Logged In");
       window.setTimeout(() => {
-        location.assign("/");
+        location.assign("/mentors");
       }, 1500);
     }
   } catch (err) {
@@ -54,7 +54,7 @@ const loginForm = document.querySelector(".form");
 const signupForm = document.querySelector(".signupform");
 const logOutBtn = document.querySelector(".logout");
 console.log(logOutBtn);
-
+console.log(signupForm);
 // DELEGATION
 
 if (loginForm)
@@ -73,14 +73,15 @@ if (signupForm)
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
+    console.log("Hello");
     signup(firstName, lastName, email, password, passwordConfirm);
   });
 
 if (logOutBtn) logOutBtn.addEventListener("click", logout);
 
 export const signup = async (
-  lastName,
   firstName,
+  lastName,
   email,
   password,
   passwordConfirm
@@ -102,7 +103,7 @@ export const signup = async (
       showAlert("success", "Signed up successfully!");
       console.log("Signed up");
       window.setTimeout(() => {
-        location.assign("/");
+        location.assign("/mentors");
       }, 1500);
     }
   } catch (err) {
