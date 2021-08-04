@@ -18,7 +18,7 @@ We learnt a lot of stuff from teamwork to teamspirit, from how to handle time pr
 ## What's next for Mentoraction
 Firstly, we will work on making it more dynamic so that mentors can login themselves on their own. Our next aim would be to make it more interactive and user friendly. We still have to add more features into it and will also keep on adding them in the future as per the need. We are also thinking of converting it to react within 2 3 months after getting comfortable with react. We also wish to convert it into a mobile app as “Mentoraction” has chat features and chat features are more user friendly in a mobile app and everyone is habitual of chatting via smartphones. If it would be possible, we would like to diversify our mentors, and would like to include as many mentors as we could that are from every possible domain so that students can get knowledge/guidance for any domain present out there.
 ## Demo
-https://youtu.be/_DNZ1AhBYig
+https://www.youtube.com/watch?v=XAbZk-0Rxlk
 </object>
 ## Usage
 <pre> <code>
@@ -29,3 +29,5 @@ https://youtu.be/_DNZ1AhBYig
   </code>
 </pre>
 Feel free to play with it.
+## Check it out
+https://mentoraction.herokuapp.com/
