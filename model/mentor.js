@@ -77,6 +77,7 @@ mentorSchema.virtual("reviews", {
   localField: "_id",
 });
 
+// save the name of the mentor as a slug in the DB.
 mentorSchema.pre("save", function (next) {
   this.slug = slugify(this.name, { lower: true });
   next();

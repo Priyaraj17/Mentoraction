@@ -1,16 +1,13 @@
-const http = require("http");
 const express = require("express");
 const path = require("path");
-const logger = require("morgan");
+const logger = require("logger");
 const helmet = require("helmet");
-const cors = require("cors");
-const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const morgan = require("morgan");
 
+// Route handlers
 const mentorRouter = require("./routes/mentors");
-const menteeRouter = require("./routes/mentee");
 const userRouter = require("./routes/users");
 const postRouter = require("./routes/posts");
 const viewRouter = require("./routes/views");
@@ -23,7 +20,6 @@ app.set("views", path.join(__dirname, "views"));
 
 // 1) GLOBAL MIDDLEWARES
 // Serving static files
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
@@ -36,13 +32,11 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Body parser, reading data from body into req.body
-app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Test Middleware:
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
@@ -53,15 +47,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes:
-app.use("/", viewRouter);
-app.get("/hi", function (req, res) {
+// Test route:
+app.get("/hi", (req, res) => {
   console.log("hi page");
   res.send("hi");
 });
+
+// Routes:
+
+// View Route:
+app.use("/", viewRouter);
+
+// API routes:
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/mentors", mentorRouter);
-app.use("/api/v1/mentees", menteeRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/posts", postRouter);
 module.exports = app;

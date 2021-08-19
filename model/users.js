@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 
@@ -37,6 +36,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+// Saves the password in the database.
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
@@ -45,6 +45,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// Checks if the password entered by the user is correct or not.
 userSchema.methods.correctPassword = async function (
   candidatePasssword,
   userPassword
